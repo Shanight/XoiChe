@@ -1,0 +1,68 @@
+/* Header.css */
+.header {
+    background-color: #c00000;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-left,
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .facebook-link {
+    display: flex; /* Căn giữa icon và text */
+    align-items: center;
+    color: white; /* Màu chữ trắng */
+    text-decoration: none; /* Bỏ gạch chân */
+    margin-right: 20px; /* Khoảng cách với các phần tử khác */
+    transition: color 0.3s ease, transform 0.3s ease; /* Hiệu ứng hover */
+  }
+  
+  .facebook-link:hover {
+    color: #f0ad4e; /* Đổi màu chữ khi hover */
+    transform: scale(1.1); /* Tăng nhẹ kích thước khi hover */
+  }
+  
+  .facebook-icon {
+    font-size: 1.5em; /* Kích thước icon */
+    margin-right: 8px; /* Khoảng cách giữa icon và text */
+  }
+  
+  .header-icon {
+    font-size: 1.5em; /* Kích thước icon */
+    color: white; /* Màu mặc định */
+    margin-right: 10px; /* Khoảng cách với text */
+    transition: color 0.3s ease; /* Hiệu ứng đổi màu khi hover */
+  }
+  
+  .header-icon:hover {
+    color: #f0ad4e; /* Đổi màu vàng khi hover */
+  }
+  
+  .header-right .header-text {
+    margin-right: 20px;
+  }
+  
+  .search-icon {
+    background-color: gold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-icon:hover {
+    background-color: #f0ad4e; /* Đổi màu nền khi hover */
+  }
+  
+  .search-icon svg {
+    width: 1em; /* Điều chỉnh kích thước icon */
+    height: 1em;
+  }
+  

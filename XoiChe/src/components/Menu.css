@@ -1,0 +1,109 @@
+/* Menu */
+.menu {
+    background-color: #c00000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid #f0ad4e;
+    width: 100%;
+    justify-content: center; /* Căn giữa menu theo chiều ngang */
+    box-sizing: border-box;
+  }
+  
+  /* Container của menu */
+  .menu-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px; /* Đặt chiều rộng tối đa của menu */
+    padding: 0 70px; /* Thêm khoảng cách bên trái và bên phải của menu */
+  }
+  
+  /* Phần menu bên trái và phải */
+  .menu-left,
+  .menu-right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Menu bên trái sát logo hơn */
+  .menu-left {
+    margin-right: 5px; /* Giảm khoảng cách giữa menu trái và logo */
+  }
+  
+  .menu-right {
+    margin-left: 5px; /* Giảm khoảng cách giữa menu phải và logo */
+  }
+  
+  /* Mục trong menu */
+  .menu-item {
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hiệu ứng hover cho các mục trong menu */
+  .menu-item:hover {
+    background-color: #a30000;
+    color: #f0ad4e;
+    border-radius: 4px;
+  }
+  
+  /* Viền giữa các mục */
+  .menu-left .menu-item:not(:last-child) {
+    border-right: 1px solid #f0ad4e;
+  }
+  
+  .menu-right .menu-item:not(:first-child) {
+    border-left: 1px solid #f0ad4e;
+  }
+  
+  /* Liên kết trong menu */
+  .menu-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-link:hover {
+    color: #f0ad4e;
+  }
+  
+  /* Logo */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px; /* Giảm khoảng cách quanh logo */
+  }
+  
+  .logo {
+    height: 60px;
+    width: auto;
+  }
+  
+  /* Media Query cho màn hình nhỏ */
+  @media (max-width: 768px) {
+    .menu {
+      padding: 10px 5px; /* Điều chỉnh padding cho màn hình nhỏ */
+    }
+  
+    .menu-left,
+    .menu-right {
+      margin: 0;
+    }
+  
+    .menu-item {
+      padding: 5px 10px; /* Giảm padding cho item trên điện thoại */
+    }
+  
+    /* Logo khi ở trên di động */
+    .logo {
+      height: 50px;
+    }
+  }
+  
