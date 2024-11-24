@@ -1,30 +1,51 @@
 import React from 'react';
 import './OrderItems.css'; // Import CSS cho phần này
-import hinh1 from '../../img/xoi-ga-ngu-vuon-hong-6434.jpg'
+import hinh1 from '../../img/xoi-ga-ngu-vuon-hong-6434.jpg';
 
 const OrderItems = () => {
-  const items = [
+  const xoiItems = [
     { name: 'Mâm Xôi Tết', price: '500,000 VND', img: hinh1 },
     { name: 'Mâm Xôi Tươi', price: '300,000 VND', img: hinh1 },
     { name: 'Mâm Xôi Truyền Thống', price: '450,000 VND', img: hinh1 },
     { name: 'Mâm Xôi Cao Cấp', price: '700,000 VND', img: hinh1 },
     { name: 'Mâm Xôi Chay', price: '600,000 VND', img: hinh1 },
-    { name: 'Mâm Xôi Đặc Biệt', price: '800,000 VND', img: hinh1 }, // Mục thêm vào
+    { name: 'Mâm Xôi Đặc Biệt', price: '800,000 VND', img: hinh1 },
   ];
 
-  return (
-    <div className="order-container container">
-      {items.map((item, index) => (
-        <div key={index} className="order-item">
-          <img src={item.img} alt={item.name} className="item-img" />
-          <h3 className="item-name">{item.name}</h3>
-          <p className="item-price">{item.price}</p>
-          <div className="order-buttons">
-            <button className="view-details">Xem Chi Tiết</button>
-            <button className="order-now">Đặt Mâm Xôi</button>
-          </div>
+  const cungsItems = [
+    { name: 'Mâm Cúng Đám Hỏi', price: '500,000 VND', img: hinh1 },
+    { name: 'Mâm Cúng Lễ Vật', price: '400,000 VND', img: hinh1 },
+    { name: 'Mâm Cúng Tân Gia', price: '450,000 VND', img: hinh1 },
+    { name: 'Mâm Cúng Lễ Hội', price: '650,000 VND', img: hinh1 },
+    { name: 'Mâm Cúng Thôi Nôi', price: '700,000 VND', img: hinh1 },
+    { name: 'Mâm Cúng Giỗ', price: '600,000 VND', img: hinh1 },
+  ];
+
+  const renderItems = (items) => {
+    return items.map((item, index) => (
+      <div key={index} className="order-item">
+        <img src={item.img} alt={item.name} className="item-img" />
+        <h3 className="item-name">{item.name}</h3>
+        <p className="item-price">{item.price}</p>
+        <div className="order-buttons">
+          <button className="view-details">Xem Chi Tiết</button>
+          <button className="order-now">Đặt Mâm Xôi</button>
         </div>
-      ))}
+      </div>
+    ));
+  };
+
+  return (
+    <div>
+      <h1 className='services-title' style={{ textAlign: "center", padding: "20px" }}>Mâm Xôi</h1>
+      <div className="order-container container">
+        {renderItems(xoiItems)}
+      </div>
+
+      <h1 className='services-title' style={{ textAlign: "center", padding: "20px" }}>Mâm Cúng</h1>
+      <div className="order-container container">
+        {renderItems(cungsItems)}
+      </div>
     </div>
   );
 };

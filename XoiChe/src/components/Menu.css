@@ -85,7 +85,77 @@
     height: 60px;
     width: auto;
   }
-  
+  /* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Vị trí ngay dưới mục dropdown */
+  left: 0;
+  background-color: #fff; /* Đổi màu nền dropdown thành trắng */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  display: none; /* Ẩn mặc định */
+  z-index: 1000;
+  width: 220px; /* Thêm hoặc chỉnh chiều dài ở đây */
+
+}
+
+/* Hiển thị dropdown khi hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown link */
+.dropdown-link {
+  color: black; /* Đổi font màu thành đen */
+  text-decoration: none;
+  display: block;
+  padding: 8px 20px;
+  position: relative; /* Để tạo hiệu ứng underline */
+  transition: color 0.3s ease;
+}
+
+/* Hiệu ứng underline */
+.dropdown-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #c00000; /* Màu underline */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Hover trên link sẽ hiển thị underline */
+.dropdown-link:hover {
+  color: #c00000; /* Đổi màu chữ khi hover */
+}
+
+.dropdown-link:hover::after {
+  width: 100%; /* Hiệu ứng underline trượt qua toàn bộ */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static; /* Đổi vị trí dropdown cho phù hợp */
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .dropdown-link {
+    padding: 10px;
+  }
+}
+
   /* Media Query cho màn hình nhỏ */
   @media (max-width: 768px) {
     .menu {

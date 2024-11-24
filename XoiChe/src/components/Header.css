@@ -48,21 +48,43 @@
     margin-right: 20px;
   }
   
-  .search-icon {
-    background-color: gold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-icon:hover {
-    background-color: #f0ad4e; /* Đổi màu nền khi hover */
-  }
-  
-  .search-icon svg {
-    width: 1em; /* Điều chỉnh kích thước icon */
-    height: 1em;
-  }
-  
+  /* Search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Search input */
+.search-input {
+  width: 0; /* Mặc định ẩn */
+  opacity: 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease; /* Hiệu ứng mở rộng */
+}
+
+/* Khi search được mở */
+.search-container .search-input:focus,
+.search-container .search-input:valid {
+  width: 200px; /* Chiều rộng input khi mở */
+  opacity: 1;
+  margin-right: 10px; /* Tạo khoảng cách giữa input và icon */
+}
+
+/* Search icon */
+.search-icon {
+  background-color: gold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon:hover {
+  background-color: #f0ad4e; /* Đổi màu nền khi hover */
+}

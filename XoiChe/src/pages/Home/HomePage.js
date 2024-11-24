@@ -29,7 +29,6 @@ const HomePage = () => {
       <div className="slider">
         <img src={slides[currentSlide]} alt={`Slide ${currentSlide + 1}`} className="slide-image" />
       </div>
-      <h1 className='services-title' style={{textAlign:"center",padding:"20px"}}>Đặt Mâm Xôi</h1>
       <OrderItems />
       <Services/>
     </div>
