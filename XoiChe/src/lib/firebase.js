@@ -28,4 +28,5 @@ const app = initializeApp(firebaseConfig);
 export const database = getDatabase(app);
 export const firestore = getFirestore(app);
 const storage = getStorage(app);
+
 export {storage};
