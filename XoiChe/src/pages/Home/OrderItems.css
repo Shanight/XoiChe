@@ -1,114 +1,113 @@
 .order-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.order-item {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Giữ nguyên để có 5 cột trên màn hình lớn */
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-sizing: border-box; /* Đảm bảo padding không làm giảm kích thước */
+}
+
+.order-item:hover {
+  transform: scale(1.05); /* Khi hover sẽ phóng to phần tử */
+}
+
+.item-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.item-name {
+  font-size: 18px;
+  color: #c00000;
+  margin-bottom: 12px;
+  min-height: 50px; /* Đảm bảo chiều cao tối thiểu cho item name */
+  overflow: hidden; /* Nếu tên quá dài sẽ cắt bớt */
+  align-items: center; /* Căn giữa nội dung trong item name */
+}
+
+.item-price {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.order-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các nút chuyển sang dòng mới nếu cần */
+  gap: 10px;
+  justify-content: center; /* Căn giữa các nút */
+  width: 100%;
+}
+
+.view-details, .order-now {
+  padding: 10px 20px;
+  background-color: #f0ad4e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px; /* Giảm kích thước font-size cho các nút */
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Đảm bảo chữ không bị xuống dòng */
+  min-width: 120px; /* Đảm bảo nút không quá nhỏ */
+  box-sizing: border-box;
+  flex-grow: 1; /* Nút sẽ tự động co giãn nếu cần */
+}
+
+.view-details:hover, .order-now:hover {
+  background-color: #a30000;
+}
+
+.order-item button:active {
+  transform: scale(0.98);
+}
+
+/* Cải thiện phần hiển thị khi nhỏ màn hình */
+@media (max-width: 768px) {
   .order-item {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%; /* Giữ nguyên để có 5 cột trên màn hình lớn */
-    text-align: center;
-    transition: transform 0.3s ease;
-    box-sizing: border-box; /* Đảm bảo padding không làm giảm kích thước */
+    width: 48%; /* Điều chỉnh lại độ rộng cho phù hợp với màn hình nhỏ */
   }
-  
-  .order-item:hover {
-    transform: scale(1.05); /* Khi hover sẽ phóng to phần tử */
-  }
-  
-  .item-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
+
   .item-name {
-    font-size: 18px;
-    color: #c00000;
-    margin-bottom: 12px;
-    min-height: 50px; /* Đảm bảo chiều cao tối thiểu cho item name */
-    overflow: hidden; /* Nếu tên quá dài sẽ cắt bớt */
-    align-items: center; /* Căn giữa nội dung trong item name */
+    font-size: 16px; /* Giảm kích thước chữ tên sản phẩm trên màn hình nhỏ */
   }
-  
+
   .item-price {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 14px; /* Giảm kích thước chữ giá tiền */
   }
-  
-  .order-buttons {
-    display: flex;
-    flex-wrap: wrap; /* Cho phép các nút chuyển sang dòng mới nếu cần */
-    gap: 10px;
-    justify-content: center; /* Căn giữa các nút */
-    width: 100%;
-  }
-  
+
   .view-details, .order-now {
-    padding: 10px 20px;
-    background-color: #f0ad4e;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px; /* Giảm kích thước font-size cho các nút */
-    transition: background-color 0.3s ease;
-    white-space: nowrap; /* Đảm bảo chữ không bị xuống dòng */
-    min-width: 120px; /* Đảm bảo nút không quá nhỏ */
-    box-sizing: border-box;
-    flex-grow: 1; /* Nút sẽ tự động co giãn nếu cần */
+    font-size: 12px; /* Giảm kích thước font-size cho các nút */
+    padding: 8px 16px; /* Điều chỉnh kích thước nút cho màn hình nhỏ */
+    min-width: 100px; /* Đảm bảo nút không quá nhỏ */
   }
-  
-  .view-details:hover, .order-now:hover {
-    background-color: #a30000;
+}
+
+@media (max-width: 480px) {
+  .order-item {
+    width: 100%; /* Điều chỉnh để hiển thị một cột cho màn hình nhỏ hơn */
   }
-  
-  .order-item button:active {
-    transform: scale(0.98);
+
+  .order-buttons {
+    flex-direction: column; /* Đảm bảo các nút nằm dọc nhau trên màn hình nhỏ */
+    justify-content: flex-start;
   }
-  
-  /* Cải thiện phần hiển thị khi nhỏ màn hình */
-  @media (max-width: 768px) {
-    .order-item {
-      width: 48%; /* Điều chỉnh lại độ rộng cho phù hợp với màn hình nhỏ */
-    }
-  
-    .item-name {
-      font-size: 16px; /* Giảm kích thước chữ tên sản phẩm trên màn hình nhỏ */
-    }
-  
-    .item-price {
-      font-size: 14px; /* Giảm kích thước chữ giá tiền */
-    }
-  
-    .view-details, .order-now {
-      font-size: 12px; /* Giảm kích thước font-size cho các nút */
-      padding: 8px 16px; /* Điều chỉnh kích thước nút cho màn hình nhỏ */
-      min-width: 100px; /* Đảm bảo nút không quá nhỏ */
-    }
+
+  .view-details, .order-now {
+    font-size: 10px; /* Giảm kích thước chữ nút nữa */
+    padding: 6px 12px; /* Điều chỉnh thêm cho nút */
+    min-width: 80px; /* Đảm bảo các nút có kích thước hợp lý */
   }
-  
-  @media (max-width: 480px) {
-    .order-item {
-      width: 100%; /* Điều chỉnh để hiển thị một cột cho màn hình nhỏ hơn */
-    }
-  
-    .order-buttons {
-      flex-direction: column; /* Đảm bảo các nút nằm dọc nhau trên màn hình nhỏ */
-      justify-content: flex-start;
-    }
-  
-    .view-details, .order-now {
-      font-size: 10px; /* Giảm kích thước chữ nút nữa */
-      padding: 6px 12px; /* Điều chỉnh thêm cho nút */
-      min-width: 80px; /* Đảm bảo các nút có kích thước hợp lý */
-    }
-  }
-  
+}

@@ -4,6 +4,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
 import { getAuth,GoogleAuthProvider,sendPasswordResetEmail, confirmPasswordReset } from "firebase/auth";
 import { getStorage } from "firebase/storage";
+
 import { Auth } from "firebase/auth";
 import "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
@@ -14,13 +15,14 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyARu3es8FJTa1M7KdIbowB1qqOCWTKeJJA",
-  authDomain: "xoiche-c6469.firebaseapp.com",
-  projectId: "xoiche-c6469",
-  storageBucket: "xoiche-c6469.firebasestorage.app",
-  messagingSenderId: "854421162779",
-  appId: "1:854421162779:web:e70b22b58049039e05e1be",
-  measurementId: "G-3SC0E704RF"
+  apiKey: "AIzaSyAmQullpEMPTl0p5P5gf_T8rOAh3pIwSaA",
+  authDomain: "baitai1-85678.firebaseapp.com",
+  databaseURL: "https://baitai1-85678-default-rtdb.firebaseio.com",
+  projectId: "baitai1-85678",
+  storageBucket: "baitai1-85678.appspot.com",
+  messagingSenderId: "475082567479",
+  appId: "1:475082567479:web:5197e1d15cb5ed7426b4b2",
+  measurementId: "G-ZYBX0NMBB1"
 };
 
 // Initialize Firebase
