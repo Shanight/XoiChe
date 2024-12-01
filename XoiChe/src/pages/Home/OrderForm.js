@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import { firestore } from "../../lib/firebase"; // Import Firestore từ cấu hình Firebase
 import { collection, addDoc } from "firebase/firestore";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api"; // Thư viện Google Maps
 import "./OrderForm.css";
 
 const OrderForm = ({ item, onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
-    address: "",
+    address: "", // Địa chỉ sẽ được cập nhật từ bản đồ
     phone: "",
+  });
+  const [showMap, setShowMap] = useState(false); // State hiển thị bản đồ
+  const [selectedLocation, setSelectedLocation] = useState({
+    lat: 10.8231, // Vĩ độ mặc định (TP. HCM)
+    lng: 106.6297, // Kinh độ mặc định (TP. HCM)
+  });
+
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "YOUR_GOOGLE_MAPS_API_KEY", // Thay bằng API Key của bạn
   });
 
   const handleChange = (e) => {
@@ -19,12 +29,12 @@ const OrderForm = ({ item, onClose }) => {
     e.preventDefault();
 
     try {
-      // Gửi dữ liệu lên Firestore
       const ordersCollection = collection(firestore, "orders"); // Thư mục Firestore là "orders"
       await addDoc(ordersCollection, {
         ...formData,
         itemName: item.name,
         itemPrice: item.price,
+        location: selectedLocation, // Lưu vị trí đã chọn
         timestamp: new Date().toISOString(), // Ghi thời gian đặt hàng
       });
 
@@ -35,6 +45,21 @@ const OrderForm = ({ item, onClose }) => {
       alert("Có lỗi xảy ra. Vui lòng thử lại.");
     }
   };
+
+  const handleMapClick = (event) => {
+    const lat = event.latLng.lat();
+    const lng = event.latLng.lng();
+    setSelectedLocation({ lat, lng });
+
+    // Cập nhật địa chỉ dạng tọa độ vào input
+    setFormData((prev) => ({
+      ...prev,
+      address: `${lat.toFixed(5)}, ${lng.toFixed(5)}`, // Hiển thị tọa độ trên input địa chỉ
+    }));
+  };
+
+  const handleShowMap = () => setShowMap(true);
+  const handleCloseMap = () => setShowMap(false);
 
   if (!item) return null;
 
@@ -60,14 +85,19 @@ const OrderForm = ({ item, onClose }) => {
           </label>
           <label className="order-form-label">
             Địa chỉ:
-            <input
-              type="text"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              required
-              className="order-form-input"
-            />
+            <div className="address-input">
+              <input
+                type="text"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                required
+                className="order-form-input"
+              />
+              <button type="button" className="map-icon" onClick={handleShowMap}>
+                🗺️
+              </button>
+            </div>
           </label>
           <label className="order-form-label">
             Số điện thoại:
@@ -80,14 +110,30 @@ const OrderForm = ({ item, onClose }) => {
               className="order-form-input"
             />
           </label>
-          <button className="order-form-submit" type="submit">
+          <button className="button1" type="submit">
             Xác nhận đặt hàng
           </button>
         </form>
-        <button className="order-form-close" onClick={onClose}>
+        <button className="close-btn" onClick={onClose}>
           ✕
         </button>
       </div>
+
+      {showMap && isLoaded && (
+        <div className="map-container">
+          <GoogleMap
+            mapContainerStyle={{ width: "100%", height: "400px" }}
+            center={selectedLocation}
+            zoom={15}
+            onClick={handleMapClick}
+          >
+            <Marker position={selectedLocation} />
+          </GoogleMap>
+          <button className="close-map-btn" onClick={handleCloseMap}>
+            Đóng Bản Đồ
+          </button>
+        </div>
+      )}
     </div>
   );
 };

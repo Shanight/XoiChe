@@ -79,4 +79,58 @@
   .close-btn:focus {
     outline: none;
   }
+  .map-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+  }
+  .close-map-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .close-map-btn:hover {
+    background: #d32f2f;
+  }
   
+  /* Điều chỉnh phần input địa chỉ và nút kế bên */
+  .address-input {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa input và nút icon */
+  }
+  
+  .address-input input {
+    flex: 1; /* Input chiếm toàn bộ không gian còn lại */
+  }
+  
+  .map-icon {
+    padding: 10px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Tăng kích thước icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .map-icon:hover {
+    background-color: #a30000;
+  }
