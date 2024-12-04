@@ -1,0 +1,136 @@
+.order-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .order-form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .order-form-container h2 {
+    margin-top: 0;
+  }
+  
+  .order-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .order-form-container label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .order-form-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .button1 {
+    padding: 10px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button1:hover {
+    background-color: #a30000;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none; /* Không có nền */
+    color: red; /* Màu đỏ cho dấu "X" */
+    font-size: 24px; /* Tăng kích thước cho dễ nhìn */
+    font-weight: bold;
+    border: none; /* Không có viền */
+    cursor: pointer; /* Giữ con trỏ chuột */
+    outline: none; /* Loại bỏ đường viền focus */
+  }
+  
+  /* Đảm bảo không có thay đổi khi hover */
+  .close-btn:hover {
+    background: none;
+    color: red; /* Màu không đổi khi hover */
+  }
+  
+  /* Loại bỏ hiệu ứng focus (khi nhấn nút) */
+  .close-btn:focus {
+    outline: none;
+  }
+  .map-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+  }
+  .close-map-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .close-map-btn:hover {
+    background: #d32f2f;
+  }
+  
+  /* Điều chỉnh phần input địa chỉ và nút kế bên */
+  .address-input {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa input và nút icon */
+  }
+  
+  .address-input input {
+    flex: 1; /* Input chiếm toàn bộ không gian còn lại */
+  }
+  
+  .map-icon {
+    padding: 10px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Tăng kích thước icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .map-icon:hover {
+    background-color: #a30000;
+  }

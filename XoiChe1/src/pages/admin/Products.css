@@ -1,0 +1,61 @@
+/* Tổng thể giao diện */
+.products-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #d4af37; /* Màu vàng gold */
+    border-radius: 10px;
+    background-color: #fffaf0; /* Màu nền vàng nhạt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .products-title {
+    text-align: center;
+    color: #d4af37; /* Màu vàng gold */
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .products-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .products-label {
+    font-size: 14px;
+    color: #6c6c6c;
+    font-weight: bold;
+  }
+  
+  .products-input,
+  .products-file-input {
+    padding: 10px;
+    border: 1px solid #d4af37; /* Màu vàng gold */
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .products-input:focus,
+  .products-file-input:focus {
+    outline: none;
+    border-color: #b8860b; /* Màu vàng đậm hơn */
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.8);
+  }
+  
+  .products-submit-btn {
+    padding: 10px 15px;
+    background-color: #d4af37; /* Màu vàng gold */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .products-submit-btn:hover {
+    background-color: #b8860b; /* Màu vàng đậm hơn */
+  }
+  

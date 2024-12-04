@@ -1,0 +1,87 @@
+.order-container1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.order-item {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%; /* 3 cột trên màn hình lớn */
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-sizing: border-box; /* Đảm bảo padding không làm giảm kích thước */
+}
+
+.order-item:hover {
+  transform: scale(1.05); /* Khi hover sẽ phóng to phần tử */
+}
+
+.item-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.item-name {
+  font-size: 18px;
+  color: #c00000;
+  margin-bottom: 12px;
+  min-height: 50px; /* Đảm bảo chiều cao tối thiểu cho item name */
+  overflow: hidden; /* Nếu tên quá dài sẽ cắt bớt */
+}
+
+.item-price {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.order-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.view-details,
+.order-now {
+  padding: 10px 20px;
+  background-color: #f0ad4e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.view-details:hover,
+.order-now:hover {
+  background-color: #a30000;
+}
+
+.order-item button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .order-item {
+    width: 48%; /* 2 cột trên màn hình nhỏ */
+  }
+}
+
+@media (max-width: 480px) {
+  .order-item {
+    width: 100%; /* 1 cột trên màn hình rất nhỏ */
+  }
+}
+.services-title{
+  text-align: center;
+  padding: 20px;
+}
