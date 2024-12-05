@@ -1,0 +1,39 @@
+.product-image-preview {
+    margin: 10px 0;
+  }
+  
+  .product-image-preview-img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .products-file-input {
+    margin: 10px 0;
+  }
+  
+  .products-submit-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .products-submit-btn:disabled {
+    background-color: #ccc;
+  }
+  
+  .products-input,
+  .products-select,
+  .products-textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+  }
+  
+  .products-label {
+    display: block;
+    margin-bottom: 5px;
+  }
