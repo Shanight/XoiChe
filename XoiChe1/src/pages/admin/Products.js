@@ -11,6 +11,7 @@ const Products = () => {
     category: "Mâm Cúng Việt", // Giá trị mặc định
     images: [], // Mảng lưu tất cả các ảnh
     mainImage: null, // Ảnh chính
+    details: "", // Chi tiết sản phẩm (mô tả)
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -88,6 +89,7 @@ const Products = () => {
         category: productData.category,
         mainImageUrl: mainImageUrl, // Lưu ảnh chính
         imageUrls: imageUrls, // Lưu các ảnh phụ
+        details: productData.details, // Lưu chi tiết sản phẩm
         timestamp: new Date(),
       });
 
@@ -98,6 +100,7 @@ const Products = () => {
         category: "Mâm Cúng Việt",
         images: [],
         mainImage: null,
+        details: "", // Reset chi tiết sản phẩm
       });
     } catch (error) {
       console.error("Lỗi khi thêm sản phẩm:", error);
@@ -139,7 +142,7 @@ const Products = () => {
             name="category"
             value={productData.category}
             onChange={handleChange}
-            className="products-select"
+            className="products-select" 
           >
             <option value="Mâm Cúng Việt">Mâm Cúng Việt</option>
             <option value="Mâm Cúng Đầy Tháng">Mâm Cúng Đầy Tháng</option>
@@ -149,6 +152,16 @@ const Products = () => {
             </option>
             <option value="Mâm Cúng Nhà Mới">Mâm Cúng Nhà Mới</option>
           </select>
+        </label>
+        <label className="products-label">
+          Chi tiết sản phẩm:
+          <textarea
+            name="details"
+            value={productData.details}
+            onChange={handleChange}
+            required
+            className="products-textarea"
+          />
         </label>
         <label className="products-label">
           Hình ảnh chính:

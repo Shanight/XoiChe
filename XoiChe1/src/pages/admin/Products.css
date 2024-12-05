@@ -1,61 +1,118 @@
-/* Tổng thể giao diện */
+/* Container chính của form */
 .products-container {
-    width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 2px solid #d4af37; /* Màu vàng gold */
-    border-radius: 10px;
-    background-color: #fffaf0; /* Màu nền vàng nhạt */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-  }
-  
-  .products-title {
-    text-align: center;
-    color: #d4af37; /* Màu vàng gold */
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .products-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .products-label {
-    font-size: 14px;
-    color: #6c6c6c;
-    font-weight: bold;
-  }
-  
-  .products-input,
-  .products-file-input {
-    padding: 10px;
-    border: 1px solid #d4af37; /* Màu vàng gold */
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  .products-input:focus,
-  .products-file-input:focus {
-    outline: none;
-    border-color: #b8860b; /* Màu vàng đậm hơn */
-    box-shadow: 0 0 5px rgba(212, 175, 55, 0.8);
-  }
-  
-  .products-submit-btn {
-    padding: 10px 15px;
-    background-color: #d4af37; /* Màu vàng gold */
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .products-submit-btn:hover {
-    background-color: #b8860b; /* Màu vàng đậm hơn */
-  }
-  
+  width: 80%;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề form */
+.products-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style cho form */
+.products-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label chung cho các input */
+.products-label {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Input chung cho các trường dữ liệu */
+.products-input,
+.products-select,
+.products-textarea,
+.products-file-input,
+.products-tel {
+  width: 100%;
+  padding: 12px; /* Tăng padding để input dài hơn */
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* Input cho textarea */
+.products-textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Cải thiện chiều cao cho input tel */
+.products-tel {
+  height: 50px; /* Chiều cao cho input tel */
+}
+
+/* Style cho select */
+.products-select {
+  cursor: pointer;
+}
+
+/* Định dạng cho file input */
+.products-file-input {
+  padding: 5px;
+}
+
+/* Nút submit */
+.products-submit-btn {
+  padding: 12px 20px;
+  background-color: #ffd700; /* Màu vàng gold */
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.products-submit-btn:hover {
+  background-color: #e6b800; /* Màu vàng đậm hơn khi hover */
+}
+
+.products-submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Giới hạn chiều rộng của các input để dễ đọc hơn */
+.products-input,
+.products-select,
+.products-textarea,
+.products-file-input {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Các border cho label, input khi focus */
+.products-input:focus,
+.products-select:focus,
+.products-textarea:focus,
+.products-file-input:focus,
+.products-tel:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Cải thiện spacing giữa các phần tử */
+.products-label + .products-input,
+.products-label + .products-select,
+.products-label + .products-textarea {
+  margin-top: 10px;
+}
+
+.products-submit-btn {
+  margin-top: 20px;
+}

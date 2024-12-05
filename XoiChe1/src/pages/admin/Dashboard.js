@@ -13,6 +13,7 @@ const Dashboard = () => {
       
       <div className="dashboard-nav">
         <Link to="/products">Sản phẩm</Link>
+        <Link to="/update">Update</Link>
         <Link to="/orders">Đơn hàng</Link>
       </div>
     </div>

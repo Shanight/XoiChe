@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './ChiTiet.css'; // Thêm file CSS
+import OrderForm from "../Home/OrderForm"; // Import OrderForm
 
 const NoiDung = ({ product }) => {
   const [images, setImages] = useState([]);
   const [fullscreenImage, setFullscreenImage] = useState(null); // State cho ảnh phóng to
+  const [showOrderForm, setShowOrderForm] = useState(false); // State để hiển thị form đặt hàng
 
   // Hàm định dạng số tiền với dấu chấm
   const formatPrice = (price) => {
@@ -54,6 +56,14 @@ const NoiDung = ({ product }) => {
     setFullscreenImage(null);
   };
 
+  // Kiểm tra nếu `product.details` là chuỗi, chuyển thành mảng
+  const detailsArray = typeof product.details === 'string' ? [product.details] : product.details;
+
+  // Hàm để mở form đặt hàng
+  const handleOrderNow = () => {
+    setShowOrderForm(true); // Hiển thị form khi nhấn vào nút
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -83,19 +93,32 @@ const NoiDung = ({ product }) => {
           </div>
         </div>
 
-        {/* Cột phải: Hiển thị tên, giá, và nút đặt */}
+        {/* Cột phải: Hiển thị tên, giá, và chi tiết sản phẩm */}
         <div className="col-6">
           <h3>{product.name}</h3>
           <p className="price">{formatPrice(product.price)} VND</p>
-          <p>{product.description}</p>
-          <ul>
-            {product.details && product.details.map((detail, index) => (
-              <li key={index}>{detail}</li>
-            ))}
-          </ul>
-          <button className="order-button">Đặt Mâm Xôi</button>
+          <p>{product.description}</p> {/* Mô tả sản phẩm */}
+          
+          {/* Render chi tiết sản phẩm nếu là mảng */}
+          {Array.isArray(detailsArray) && detailsArray.length > 0 ? (
+            <div className="product-details">
+              <ul>
+                {detailsArray.map((detail, index) => (
+                  <li key={index}>{detail}</li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <p>Không có chi tiết sản phẩm</p> // Thông báo nếu không có chi tiết
+          )}
+
+          {/* Nút "Đặt Mâm Xôi" */}
+          <button className="order-button" onClick={handleOrderNow}>Đặt Mâm Xôi</button>
         </div>
       </div>
+
+      {/* Hiển thị form đặt hàng khi showOrderForm là true */}
+      {showOrderForm && <OrderForm item={product} onClose={() => setShowOrderForm(false)} />}
 
       {/* Phóng to ảnh */}
       {fullscreenImage && (

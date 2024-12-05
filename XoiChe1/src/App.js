@@ -7,6 +7,7 @@ import ChiTiet from './pages/ChiTiet/ChiTiet'; // Trang chi tiết
 import Dashboard from './pages/admin/Dashboard';
 import Products from './pages/admin/Products';
 import Orders from './pages/admin/Orders';
+import Update from './pages/admin/Update';
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         </Route>
         <Route path="/Admin" index element={<Dashboard/>} /> {/* Chi tiết */}
         <Route path="/Products" index element={<Products/>} /> {/* Chi tiết */}
+        <Route path="/Update" index element={<Update/>} /> {/* Chi tiết */}
+
         <Route path="/Orders" index element={<Orders/>} /> {/* Chi tiết */}
 
       </Routes>
