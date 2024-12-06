@@ -2,10 +2,9 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
-import { getAuth,GoogleAuthProvider,sendPasswordResetEmail, confirmPasswordReset } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
-import { Auth } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 
@@ -30,5 +29,5 @@ const app = initializeApp(firebaseConfig);
 export const database = getDatabase(app);
 export const firestore = getFirestore(app);
 const storage = getStorage(app);
-
+export const auth = getAuth(app);
 export {storage};

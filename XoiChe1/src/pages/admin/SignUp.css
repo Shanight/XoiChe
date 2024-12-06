@@ -1,0 +1,96 @@
+/* Tổng thể */
+.auth-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form */
+  .sign-up-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Input Group */
+  .input-group {
+    position: relative;
+    display: flex;
+    align-items: center; /* Đảm bảo các phần tử được căn giữa theo chiều dọc */
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 15px; /* Khoảng cách từ cạnh trái */
+    color: #6c63ff; /* Màu icon */
+    font-size: 20px; /* Kích thước icon */
+    top: 50%; /* Đẩy icon xuống giữa */
+    transform: translateY(-50%); /* Căn giữa icon theo chiều dọc */
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px 15px 10px 50px; /* Chừa khoảng trống để icon không đè lên text */
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f7f7f7;
+    transition: 0.3s;
+  }
+  .input-group input:focus {
+    border-color: #6c63ff;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(108, 99, 255, 0.2);
+  }
+  
+  /* Nút Đăng ký */
+  .btn-submit {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-submit:hover {
+    background-color: #4c4fc1;
+  }
+  
+  /* Thông báo */
+  .message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #e74c3c;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .auth-container {
+      padding: 20px;
+    }
+  
+    .input-group input {
+      font-size: 14px;
+    }
+  
+    .btn-submit {
+      font-size: 16px;
+    }
+  }
+  

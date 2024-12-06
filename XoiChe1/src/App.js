@@ -8,7 +8,8 @@ import Dashboard from './pages/admin/Dashboard';
 import Products from './pages/admin/Products';
 import Orders from './pages/admin/Orders';
 import Update from './pages/admin/Update';
-
+import Login from './pages/admin/Login';
+import SignUp from './pages/admin/SighUp';
 const App = () => {
   return (
     <Router>
@@ -23,7 +24,8 @@ const App = () => {
         <Route path="/Admin" index element={<Dashboard/>} /> {/* Chi tiết */}
         <Route path="/Products" index element={<Products/>} /> {/* Chi tiết */}
         <Route path="/Update" index element={<Update/>} /> {/* Chi tiết */}
-
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/Orders" index element={<Orders/>} /> {/* Chi tiết */}
 
       </Routes>
